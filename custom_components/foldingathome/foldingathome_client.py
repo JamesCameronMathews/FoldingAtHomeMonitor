@@ -19,9 +19,8 @@ class FoldingAtHomeClient:
                 raise ValueError("Account and token required for proxy mode")
             self.url = f"wss://{proxy_host}{proxy_path}{account}?token={token}"
         else:
-            url = f"ws://{host}:{port}/api/websocket"
+            self.url = f"ws://{host}:{port}/api/websocket"
 
-        self.url = url
         self.ws = None
         self._listeners: List[Callable[[dict], None]] = []
 
