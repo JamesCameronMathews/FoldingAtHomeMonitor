@@ -17,7 +17,7 @@ class FoldingAtHomeClient:
         if use_proxy:
             if not account or not token:
                 raise ValueError("Account and token required for proxy mode")
-            self.url = f"wss://{proxy_host}{proxy_path}{account}?token={token}"
+            self.url = f"wss://{proxy_host}{proxy_path}?token={token}"
         else:
             self.url = f"ws://{host}:{port}/api/websocket"
 
