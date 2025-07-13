@@ -23,6 +23,8 @@ async def async_setup_entry(hass, entry):
         port=entry.data.get("port", 7396),
         use_proxy=entry.data.get("use_proxy", False),
         proxy_host=entry.data.get("proxy_host", "node1.foldingathome.org"),
+        account=entry.data.get("account"),
+        token=entry.data.get("token")
     )
 
     try:

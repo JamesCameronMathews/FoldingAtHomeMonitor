@@ -15,5 +15,7 @@ class FoldingAtHomeConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             vol.Optional("host", default="127.0.0.1"): str,
             vol.Optional("port", default=7396): int,
             vol.Optional("proxy_host", default=DEFAULT_PROXY_HOST): str,
+            vol.Optional("account"): str,
+            vol.Optional("token"): str
         })
         return self.async_show_form(step_id="user", data_schema=schema, errors=errors)
