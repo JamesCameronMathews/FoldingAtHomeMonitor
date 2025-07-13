@@ -4,10 +4,23 @@ from typing import Callable, List
 
 
 class FoldingAtHomeClient:
-    def __init__(self, url="ws://127.0.0.1:7396/api/websocket"):
+    def __init__(
+        self,
+        host: str = "127.0.0.1",
+        port: int = 7396,
+        use_proxy: bool = False,
+        proxy_host: str = "node1.foldingathome.org",
+        proxy_path: str = "/ws/accounts"
+    ):
+        if use_proxy:
+            url = f"wss://{proxy_host}{proxy_path}"
+        else:
+            url = f"ws://{host}:{port}/api/websocket"
+
         self.url = url
         self.ws = None
         self._listeners: List[Callable[[dict], None]] = []
+
 
     def register_listener(self, callback: Callable[[dict], None]):
         self._listeners.append(callback)

@@ -1,3 +1,6 @@
 DOMAIN = "foldingathome"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 7396
+DEFAULT_PROXY_HOST = "node1.foldingathome.org"
+DEFAULT_PROXY_PORT = 443
+DEFAULT_PROXY_PATH = "/ws/accounts"

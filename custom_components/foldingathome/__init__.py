@@ -18,7 +18,12 @@ async def async_setup_entry(hass, entry):
     host = entry.data["host"]
     port = entry.data["port"]
     ws_url = f"ws://{host}:{port}/api/websocket"
-    client = FoldingAtHomeClient(ws_url)
+    client = FoldingAtHomeClient(
+        host=entry.data.get("host", "127.0.0.1"),
+        port=entry.data.get("port", 7396),
+        use_proxy=entry.data.get("use_proxy", False),
+        proxy_host=entry.data.get("proxy_host", "node1.foldingathome.org"),
+    )
 
     try:
         await client.connect()
