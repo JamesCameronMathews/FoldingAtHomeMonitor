@@ -1,0 +1,7 @@
+{
+  "name": "Folding@Home Monitor",
+  "render_readme": true,
+  "domains": ["sensor", "switch"],
+  "country": "global",
+  "homeassistant": "2025.6.0"
+}
