@@ -4,7 +4,8 @@ from .foldingathome_client import FoldingAtHomeClient
 from .config_flow import FoldingAtHomeConfigFlow
 
 async def async_setup(hass, config):
-    hass.config_entries.register_domain(DOMAIN, FoldingAtHomeConfigFlow)
+    """Set up the Folding@Home component."""
+
     if DOMAIN in config:
         hass.async_create_task(
             hass.config_entries.flow.async_init(
