@@ -1,0 +1,9 @@
+{
+  "domain": "foldingathome",
+  "name": "Folding@Home",
+  "version": "0.1.0",
+  "documentation": "https://github.com/yourusername/ha-foldingathome",
+  "requirements": ["websockets>=11.0"],
+  "dependencies": [],
+  "codeowners": ["@JamesCameronMathews"]
+}
